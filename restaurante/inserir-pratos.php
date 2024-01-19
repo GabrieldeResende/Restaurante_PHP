@@ -158,7 +158,27 @@
         } else {
             echo 'Conexão feita com sucesso' . '<br><br>';
 
+            foreach ($pratos as $prato) {
 
+                $codigo = $prato['codigo'];
+                $nome = $prato['nome'];
+                $categoria = $prato['categoria'];
+                $descr = $prato['descr'];
+                $preco = $prato['preco'];
+                $calorias = $prato['calorias'];
+                $destaque = $prato['destaque'];
+
+                $sql = "INSERT INTO pratos(codigo, nome, categoria, descricao, preco, calorias, destaque) VALUES ('$codigo', '$nome', '$categoria', '$descr', '$preco', '$calorias', '$destaque')";
+
+                if($db_connect->query($sql) == true) {
+                    echo $nome . "inserido com sucesso! ". "<br>". "<br>";
+                } else {
+                    echo "Não foi possivel inserir o produto: ". $nome ."<br>";
+                    echo mysqli_error($db_connect) ."<br>";
+                }
+            }
+
+            echo '<br>';
             
         }
     ?>   

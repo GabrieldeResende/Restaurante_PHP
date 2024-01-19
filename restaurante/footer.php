@@ -54,7 +54,7 @@
 
                 ?>
                 <p><span class="<?php echo $classeHorario ?>">
-                    <?php echo $textoHorario ?>
+                    <?php echo $textoHorario; ?>
                 </span><br>
                     Seg-Sex: 11h30 - 24h00<br>
                     Sábado 11h30 - 02h00<br>
@@ -144,6 +144,3 @@
 <script>
     $(document).foundation();
 </script>
-</body>
-
-</html>
